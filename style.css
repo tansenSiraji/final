@@ -1,0 +1,8 @@
+#add{
+    background-color: black;
+    color: white
+}
+
+#name, #email, #age{
+    border-width: 5px;
+}

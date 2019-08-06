@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<link rel="stylesheet" href="style.css">-->
+    <title>Document</title>
+</head>
+<body>
+    <h1>NEW USER</h1>
+    
+        <input type="text" id="name" placeholder="NAME">
+        <br>
+        <br>
+        <input type="text" id="email" placeholder="EMAIL">
+        <br>
+        <br>
+        <input type="number" id="age" placeholder="AGE">
+        <br>
+        <br>
+        <button id = 'add'>ADD</button>
+        <br>
+        <br>
+        <p>Please enter name</p>
+      
+
+
+      <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script>
+      $("#add").click(function(event){
+        var user = {
+            name: $("#name").val(),
+            email: $("#email").val(),
+            age: $("#age").val()
+          }
+          $.ajax({
+              url: "/user/new",
+              method: "POST",
+              data: user
+          }).done(function(response){
+              console.log(response)
+          }).fail(function(response){
+              console.log(response)   
+          })
+    });
+</script>
+</body>
+</html>
