@@ -7,6 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <textarea id = "txtA"></textarea>
+
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  
+    <script>
+      
+        $("document").ready(function(){
+          $( "#name" ).prop( "disabled", true );
+          $( "#email" ).prop( "disabled", true );
+          $( "#age" ).prop( "disabled", true );
+          $.ajax({
+            method:"GET",
+            url:"/user/list"
+          }).done(function(response){
+            console.log(response);
+          }).fail(function(response){
+            console.log(response.responseText);
+          });
+        });
+
+    </script>
+
+
 </body>
 </html>
